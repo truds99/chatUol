@@ -1,8 +1,10 @@
 *{
     box-sizing: border-box;
+}
+body {
+    background-color: #F3F3F3;
     font-family: 'Roboto', sans-serif;
 }
-
 .top {
     position: fixed;
     display: flex;
@@ -41,7 +43,7 @@ input {
     height: 80%;
 }
 ::placeholder {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif; /* not working in Chrome */
     font-size: 18px;
     font-style: italic;
     font-weight: 400;
@@ -53,11 +55,39 @@ input {
     width: 100%;
     height: 400px;
     position: fixed;
-    top: 106px;
+    top: 102px;
     left: 0;
-    background-color: antiquewhite;
+    background-color: #F3F3F3;
 }
 .boxMsg {
     width: 100%;
     height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+.status {
+    background-color: #DCDCDC;
+}
+.message {
+    background-color: #FFFFFF;
+}
+.private-message {
+    background-color: #FFDEDE;
+}
+p {
+    margin: 0 22px 0 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+}
+.time {
+    font-size: 14px;
+    font-weight: 400;
+    color: #AAAAAA;
+}
+.to, .from {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
 }
