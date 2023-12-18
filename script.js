@@ -1,26 +1,27 @@
 let user, dataUser = {}, verifyLast, lastMsg;
 const content = document.querySelector(".content");
 
-
-function enterRoom() {
-    do {
-        user = prompt("Qual o seu nome de usuário?");
-    } while (user === null);
+function enterRoom(element) {
+    user = document.querySelector(".enterUser").value;
+    document.querySelector(".enterUser").value = "";
     dataUser = {name: user};
     const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", dataUser);
     promise
         .catch(enterRoomError)
         .then(getMsgs);
+    element.parentNode.classList.add("invisible");
+    setInterval(getMsgs, 3000);
+    setInterval(keepOnline, 5000);
 }
 
 function enterRoomError(userError) {
     const statusCode = userError.response.status;
     if (statusCode === 400) {
         alert("Já existe um usuário com esse nome");
-        enterRoom();
-        return;
+        window.location.reload();
     }
     alert ("Não foi possível entrar na sala");
+    window.location.reload();
 }
 
 function getMsgs() {
@@ -82,10 +83,6 @@ function scrollDown(lastMsg) {
     verifyLast = lastMsg;
 }
 
-enterRoom();
 
-setInterval(getMsgs, 3000);
-
-setInterval(keepOnline, 5000);
 
 
