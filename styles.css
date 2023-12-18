@@ -15,8 +15,8 @@ body {
     left: 0;
     width: 100vw;
     height: 80px;
-    background-color: red;
     box-shadow: 0px 4px 6px 0px #0000000D;
+    background-color: white;
 }
 .sendMessage {
     position: fixed;
@@ -28,7 +28,7 @@ body {
     left: 0;
     width: 100vw;
     height: 80px;
-    background-color: green;
+    background-color: white;
 }
 img {
     width: 20%;
@@ -41,6 +41,8 @@ ion-icon {
 input {
     width: 80%;
     height: 80%;
+    border: none;
+    font-family: 'Roboto', sans-serif;
 }
 ::placeholder {
     font-family: 'Roboto', sans-serif; /* not working in Chrome */
@@ -53,11 +55,11 @@ input {
 }
 .content {
     width: 100%;
-    height: 400px;
-    position: fixed;
-    top: 102px;
-    left: 0;
+    height: 100%;
+    padding: 102px 0 80px 0;
     background-color: #F3F3F3;
+    overflow-y: scroll;
+    z-index: -1;
 }
 .boxMsg {
     width: 100%;
@@ -72,7 +74,7 @@ input {
 .message {
     background-color: #FFFFFF;
 }
-.private-message {
+.private_message {
     background-color: #FFDEDE;
 }
 p {
@@ -90,4 +92,7 @@ p {
     font-size: 14px;
     font-weight: 700;
     color: #000000;
+}
+input:focus {
+    outline-style: none;
 }
