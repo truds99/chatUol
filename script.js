@@ -3,6 +3,9 @@ const content = document.querySelector(".content");
 const inputUser = document.querySelector(".enterUser");
 const inputMsg = document.querySelector("input");
 const enterScreen = document.querySelector(".enterScreen");
+const menu = document.querySelector(".menu");
+const mainScreen = document.querySelector(".mainScreen");
+const leaveMenu = document.querySelector(".leaveMenu");
 
 function enterRoom(element) {
     if(inputUser.value !== "") {
@@ -88,6 +91,11 @@ function scrollDown(lastMsg) {
         content.lastChild.scrollIntoView();
     }
     verifyLast = lastMsg;
+}
+
+function toggleMenu() {
+    menu.classList.toggle("invisible");
+    leaveMenu.classList.toggle("invisible");
 }
 
 document.addEventListener("keyup", function (event) {

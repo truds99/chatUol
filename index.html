@@ -13,22 +13,30 @@
 </head>
 
 <body>
-    <div class="top">
-        <img src="uol-logo.png" alt="logo">
-        <ion-icon name="people"></ion-icon>
-    </div>
+    <div class="mainScreen">
+        <div class="top">
+            <img src="uol-logo.png" alt="logo">
+            <ion-icon name="people" onclick="toggleMenu()" class="iconMenu">;</ion-icon>
+        </div>
 
-    <div class="content"></div>
+        <div class="content"></div>
 
-    <div class="sendMessage">
-        <input type="textarea" placeholder="Escreva aqui...">
-        <ion-icon name="paper-plane-outline" onclick="sendMsg()"></ion-icon>
+        <div class="sendMessage">
+            <input type="textarea" placeholder="Escreva aqui...">
+            <ion-icon name="paper-plane-outline" onclick="sendMsg()"></ion-icon>
+        </div>
     </div>
 
     <div class="enterScreen">
         <img src="uol-logo.png" alt="logo uol">
         <input type="text" placeholder="Digite seu nome" class="enterUser">
         <button onclick="enterRoom(this)">Entrar</button>
+    </div>
+
+    <div class="menu invisible">
+    
+    <div class="leaveMenu invisible" onclick="toggleMenu()"></div>
+
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
