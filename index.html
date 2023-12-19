@@ -15,7 +15,7 @@
 <body>
     <div class="mainScreen">
         <div class="top">
-            <img src="uol-logo.png" alt="logo">
+            <a href="/"><img src="images/uol-logo.png" alt="logo"></a>
             <ion-icon name="people" onclick="toggleMenu()" class="iconMenu">;</ion-icon>
         </div>
 
@@ -29,7 +29,7 @@
     </div>
 
     <div class="enterScreen">
-        <img src="uol-logo.png" alt="logo uol">
+        <a href="/"><img src="images/uol-logo.png" alt="logo uol"></a>
         <input type="text" placeholder="Digite seu nome" class="enterUser">
         <button onclick="enterRoom(this)">Entrar</button>
     </div>
@@ -60,6 +60,12 @@
     </div>   
     
     <div class="leaveMenu invisible" onclick="toggleMenu()"></div>
+
+    <div class="loader invisible">
+        <a href="/"><img src="images/uol-logo.png" alt="logo uol"></a>
+        <img src="images/loading-loading-forever.gif" alt="spinner gif">
+        <p>Entrando na sala...</p>
+    </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -9,9 +9,11 @@ const leaveMenu = document.querySelector(".leaveMenu");
 const usersList = document.querySelector(".users");
 const textBottom = document.querySelector("h4");
 const publicVisib = document.querySelector(".publicVisib");
+const loadingScreen = document.querySelector(".loader");
 
 function enterRoom(element) {
     if(inputUser.value !== "") {
+        toggleLoader();
         user = inputUser.value;
         inputUser.value = "";
         dataUser = {name: user};
@@ -19,7 +21,8 @@ function enterRoom(element) {
         promise
             .catch(enterRoomError)
             .then(getMsgs)
-            .then(getParticipants);
+            .then(getParticipants)
+            .then(toggleLoader);
         element.parentNode.classList.add("invisible");
         setInterval(getMsgs, 3000);
         setInterval(keepOnline, 5000);
@@ -166,14 +169,12 @@ function addCheckUsers (elm) {
         unChecked.classList.remove("invisible");
         elm.classList.add("checked");
     }
-    console.log(sendType, sendTo);
 }
 
 function addCheckVisib (elm) {
     let unChecked = elm.querySelector(".invisible");
     let checked = document.querySelector(".visibility").querySelector(".visible");
     if (!unChecked){
-        console.log(sendType, sendTo);
         return;                                                                                                                                     
     }
     if (sendTo !== "Todos" || elm === publicVisib){
@@ -185,14 +186,17 @@ function addCheckVisib (elm) {
     if (elm.querySelector("h3").innerHTML === "Público" || sendTo === "Todos"){
         textBottom.innerHTML = `Enviando para ${sendTo}`;
         sendType = "message";
-        console.log(sendType, sendTo);
     }
     else {
         textBottom.innerHTML = `Enviando para ${sendTo} (reservadamente)`;
         sendType = "private_message";
     }
-    console.log(sendType, sendTo);
-}   
+} 
+
+function toggleLoader() {
+    loadingScreen.classList.toggle("flex");
+    loadingScreen.classList.toggle("invisible");
+}
 
 document.addEventListener("keyup", function (event) {
     if (event.key === "Enter" && enterScreen.classList.contains("invisible")) {
