@@ -12,6 +12,10 @@ const publicVisib = document.querySelector(".publicVisib");
 const loadingScreen = document.querySelector(".loader");
 
 function enterRoom(element) {
+    if(inputUser.value.toLowerCase() === "todos"){
+        alert("Usuário Indisponível");
+        window.location.reload();
+    }
     if(inputUser.value !== "") {
         toggleLoader();
         user = inputUser.value;
