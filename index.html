@@ -24,6 +24,7 @@
         <div class="sendMessage">
             <input type="textarea" placeholder="Escreva aqui...">
             <ion-icon name="paper-plane-outline" onclick="sendMsg()"></ion-icon>
+            <h4>Enviando para Todos</h4>
         </div>
     </div>
 
@@ -34,10 +35,31 @@
     </div>
 
     <div class="menu invisible">
+        <h2>Escolha um contato para enviar a mensagem:</h2>
+        <div class="users">
+            <div class="iconAndName" onclick="addCheckUsers(this)">
+                <ion-icon name="people" class="iconMenu">;</ion-icon>
+                <h3>Todos</h3>
+                <ion-icon name="checkmark" class="checkToAll visible"></ion-icon>
+            </div>;
+        </div>
+
+        <h2>Escolha a visibilidade</h2>
+        <div class="visibility">
+            <div class="iconAndName publicVisib" onclick="addCheckVisib(this)">
+                <ion-icon name="lock-open"></ion-icon>
+                <h3>Público</h3>
+                <ion-icon name="checkmark" class="visible" ></ion-icon>
+            </div>
+            <div class="iconAndName" onclick="addCheckVisib(this)">
+                <ion-icon name="lock-closed"></ion-icon>
+                <h3>Reservadamente</h3>
+                <ion-icon name="checkmark" class="invisible" ></ion-icon>
+            </div>`
+        </div>
+    </div>   
     
     <div class="leaveMenu invisible" onclick="toggleMenu()"></div>
-
-    </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

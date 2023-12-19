@@ -155,6 +155,7 @@ button {
     right: 0;
     z-index: 3;
     background-color: white;
+    overflow-y: scroll;
 }
 .leaveMenu {
     height: 100%;
@@ -164,4 +165,57 @@ button {
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.7);
+}
+ion-icon:nth-child(1) {
+    width: 25px;
+    height: 25px;
+    margin-right: 7px;
+}
+.iconAndName {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+}
+.users, .visibility {
+    width: 95%;
+    margin-left: 17px;
+}
+h2 {
+    margin: 50px 0 40px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    width: 70%;
+}
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000; 
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ion-icon:nth-child(3) {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    top: 5px;
+    right: 15px;
+    color: #28BB25;
+    border: 3px;
+}
+.visible {
+    display: inline;
+}
+h4 {
+    position: fixed;
+    bottom: 8px;
+    font-size: 14px;
+    font-weight: 300;
 }
