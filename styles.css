@@ -38,6 +38,7 @@ img {
 ion-icon {
     width: 13%;
     height: 45px;
+    cursor: pointer;
 }
 input {
     width: 80%;
@@ -234,7 +235,7 @@ button:hover {
 [alt="spinner gif"] {
     width:100px;
     height: 100px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .loader [alt="logo uol"] {
     width:180px;

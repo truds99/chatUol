@@ -21,7 +21,10 @@ function enterRoom(element) {
         user = inputUser.value;
         inputUser.value = "";
         dataUser = {name: user};
-        const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", dataUser);
+        const promise = axios.post(
+          "https://mock-api.driven.com.br/api/v6/uol/participants/54f374de-9bc3-439d-a0b1-94258459c81f",
+          dataUser
+        );
         promise
             .catch(enterRoomError)
             .then(getMsgs)
@@ -47,7 +50,9 @@ function enterRoomError(userError) {
 }
 
 function getMsgs() {
-    const promise = axios.get("https://mock-api.driven.com.br/api/v6/uol/messages");
+    const promise = axios.get(
+      "https://mock-api.driven.com.br/api/v6/uol/messages/54f374de-9bc3-439d-a0b1-94258459c81f"
+    );
     promise.then(renderMsgs);
 }
 
@@ -87,7 +92,10 @@ function sendMsg() {
         let msgInput = inputMsg.value;
         inputMsg.value = "";
         let msg = {from: user, to: sendTo, text: msgInput, type: sendType};
-        const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", msg);
+        const promise = axios.post(
+          "https://mock-api.driven.com.br/api/v6/uol/messages/54f374de-9bc3-439d-a0b1-94258459c81f",
+          msg
+        );
         promise
             .catch(sendError)
             .then(getMsgs);
@@ -100,7 +108,10 @@ function sendError() {
 
 function keepOnline() {
     if (user) {
-        axios.post("https://mock-api.driven.com.br/api/v6/uol/status", dataUser);
+        axios.post(
+          "https://mock-api.driven.com.br/api/v6/uol/status/54f374de-9bc3-439d-a0b1-94258459c81f",
+          dataUser
+        );
     }
 }
 
@@ -118,7 +129,9 @@ function toggleMenu() {
 }
 
 function getParticipants() {
-    const promise = axios.get("https://mock-api.driven.com.br/api/v6/uol/participants");
+    const promise = axios.get(
+      "https://mock-api.driven.com.br/api/v6/uol/participants/54f374de-9bc3-439d-a0b1-94258459c81f"
+    );
     promise.then(renderParticipants);
 }
 
@@ -209,4 +222,5 @@ document.addEventListener("keyup", function (event) {
     }
     if (event.key === "Enter") {
         enterRoom(inputUser);
-    }});
+    }
+});
