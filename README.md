@@ -23,3 +23,20 @@ The following tools and frameworks were used in the construction of the project:
   <img width="12" /> 
   <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge" height="40" alt="css3 logo" />
 <p/>
+
+## How to run
+
+Before you start, ensure you have the following installed:
+
+Visual Studio Code (VS Code)
+Live Server extension for VS Code
+
+1. Clone this repository
+2. Open the Project in VS Code 
+3. Open the Project with Live Server
+
+  In the VS Code Explorer, locate the index.html file of your project.
+  Right-click on index.html and select Open with Live Server.
+  Alternatively, you can start the Live Server by clicking the Go Live button in the bottom-right corner of VS Code.
+  
+ 
