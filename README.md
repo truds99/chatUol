@@ -9,6 +9,8 @@ This is an web application with which you can easily chat privately or in a grou
 - Send private messages
 - Send public messages
 - Pick an username
+- Mobile layout
+- Menu that can be hidden
 
 ## Technologies
 The following tools and frameworks were used in the construction of the project:<br>
